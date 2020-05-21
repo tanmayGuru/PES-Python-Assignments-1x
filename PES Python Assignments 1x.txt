@@ -1,0 +1,553 @@
+'''
+P1
+-------------------------------------------------------------------
+'''
+def add(number1,number2):
+    try:
+        print(float(number1) + float(number2))
+    except ValueError as e:
+        print("invalid number entered")
+def subtract(number1,number2):
+    try:
+        print(float(number1) - float(number2))
+    except ValueError as e:
+        print("invalid number entered")
+def multiply(number1,number2):
+    try:
+        print(float(number1) * float(number2))
+    except ValueError as e:
+        print("invalid number entered")
+def divide(number1,number2):
+    try:
+        print(float(number1) / float(number2))
+    except ZeroDivisionError as e:
+        print("Cannot divide a number by Zero")
+    except ValueError as e:
+        print("invalid number entered")
+
+number1 = input("Enter first number: ")
+number2 = input("Enter second number: ")
+
+add(number1,number2)
+subtract(number1,number2)
+multiply(number1,number2)
+divide(number1,number2)
+
+
+'''
+P2
+-------------------------------------------------------------------
+'''
+def biggestOfThreeNumbers(number1,number2,number3):
+    if number1>number2:
+        if number1>number3:
+            print("Biggest number is number1: ",number1)
+        else:
+            print("Biggest number is number3: ",number3)
+    elif number2>number3:
+        print("Biggest number is number2: ",number2)
+    else:
+        print("Biggest number is number3: ",number3)
+
+try:
+    number1 = float(input("Enter Number1: "))
+    number2 = float(input("Enter Number2: "))
+    number3 = float(input("Enter Number3: "))
+    biggestOfThreeNumbers(number1,number2,number3)
+except ValueError as e:
+        print("Invalid Number entered")
+
+
+'''
+P3
+-------------------------------------------------------------------
+'''
+def oddOrEven(number):
+    if number%2 == 0:
+        print("{}{}".format(number," is Even"))
+    else:
+        print("{}{}".format(number," is Odd"))
+try:
+    number = int(input("Enter Number: "))
+    oddOrEven(number)
+except ValueError as e:
+        print("Invalid Number entered")
+
+
+'''
+P4
+-------------------------------------------------------------------
+'''
+def primeOrNot(number):
+    if number<=1:
+        return False
+    
+    if number<=3:
+        return True
+    
+    if number%2 == 0 or number%3 == 0:
+        return False
+    
+    i = 5
+    while(i*i <= number):
+        if(number%i == 0 or number%(i+2) == 0):
+            return False
+        i = i+6
+        
+    return True
+    
+try:
+    number = int(input("Enter Number: "))
+    if(primeOrNot(number)):
+        print("{}{}".format(number," is prime"))
+    else:
+        print("{}{}".format(number," is not prime"))
+except ValueError as e:
+        print("Invalid Number entered")
+
+'''
+P5
+-------------------------------------------------------------------
+'''
+import sys
+
+li = sys.argv
+
+#a
+for element in li[1:]:
+    print(element)
+
+#b
+if(float(sys.argv[1])>float(sys.argv[2])):
+    if(float(sys.argv[1])>float(sys.argv[3])):
+        print("Biggest number is number1: ",float(sys.argv[1]))
+    else:
+        print("Biggest number is number3: ",float(sys.argv[3]))
+elif(float(sys.argv[2])>float(sys.argv[3])):
+    print("Biggest number is number2: ",float(sys.argv[2]))
+else:
+    print("Biggest number is number3: ",float(sys.argv[3]))
+
+'''
+P6
+-------------------------------------------------------------------
+'''
+string = input("Enter String: ")
+for element in string:
+    print(element)
+
+print()
+
+#a
+initial = 0
+while(initial<=len(string)):
+    counter = 1
+    while(counter<=len(string)):
+        print(string[initial:counter])
+        counter = counter+1
+    initial = initial+1
+
+#b
+print(string*100)
+
+#c
+string2 = input("Enter String: ")
+print(string+string2)
+
+'''
+P7
+-------------------------------------------------------------------
+'''
+List = [1,2,3,4,5,6,7,8,9,10]
+#a
+print(List)
+
+#b
+initial = 0
+while(initial<=len(List)):
+    counter = 1
+    while(counter<=len(List)):
+        if len(List[initial:counter])>0:
+            print(List[initial:counter])
+        counter = counter+1
+    initial = initial+1
+
+#c
+print(List*10)
+
+#d
+List2 = [11,12,13,14,15,16,17,18,19,20]
+print(List+List2)
+
+'''
+P8
+-------------------------------------------------------------------
+'''
+Tuple = (1,2,3,4,5,6,7,8,9,10)
+#a
+print(Tuple)
+
+#b
+initial = 0
+while(initial<=len(Tuple)):
+    counter = 1
+    while(counter<=len(Tuple)):
+        if len(Tuple[initial:counter])>0:
+            print(Tuple[initial:counter])
+        counter = counter+1
+    initial = initial+1
+
+#c
+print(Tuple*10)
+
+#d
+Tuple2 = (11,12,13,14,15,16,17,18,19,20)
+print(Tuple+Tuple2)
+
+'''
+P9
+-------------------------------------------------------------------
+'''
+number1 = complex(input("Enter Complex number1: "))
+number2 = complex(input("Enter Complex number2: "))
+print(number1+number2)
+print(number1-number2)
+print(number1*number2)
+print(number1/number2)
+
+
+'''
+P10
+-------------------------------------------------------------------
+'''
+number = int(input("Enter a number"))
+print(number)
+number+=3
+print(number)
+number-=3
+print(number)
+number*=3
+print(number)
+number/=3
+print(number)
+number%=3
+print(number)
+number**=3
+print(number)
+number//=3
+print(number)
+
+'''
+P11
+-------------------------------------------------------------------
+'''
+number1 = int(input("Enter a number: "))
+number2 = int(input("Enter a number: "))
+
+print("Binary AND: ",number1 & number2)
+print("Binary OR: ",number1 | number2)
+print("Binary XOR: ",number1 ^ number2)
+print("Binary Ones Complement: ",~number1)
+print("Binary Ones Complement: ",~number2)
+print("Binary left Shift: ",number1<<2)
+print("Binary left Shift: ",number2<<2)
+print("Binary Right Shift: ",number1>>2)
+print("Binary Right Shift: ",number2>>2)
+
+
+'''
+P12
+-------------------------------------------------------------------
+'''
+def numbers():
+    for i in range(10):
+        yield int(input("Enter a number: "))
+sum = 0
+for number in numbers():
+    sum += number
+Average = sum/10
+print("Average: ",Average)
+
+counter1 = 0
+counter2 = 0
+for number in numbers():
+    if number<Average:
+        print(number," is less than Average")
+    elif number>Average:
+        counter1+=1
+    else:
+        counter2+=1
+print(counter1," numbers are more than Average")
+print(counter2," numbers are equal to Average")
+
+
+'''
+P13
+-------------------------------------------------------------------
+'''
+a = int(input("Enter number1: "))
+b = int(input("Enter number2: "))
+c = int(input("Enter number3: "))
+d = int(input("Enter number4: "))
+if(a>b):
+    if(a>c):
+        if(a>d):
+            print("Biggest: ",a)
+        else:
+            print("Biggest :",d)
+    elif(c>d):
+        print("Biggest: ",c)
+    else:
+        print("Biggest: ",d)
+elif(b>c):
+    if(b>d):
+        print("Biggest :",b)
+    else:
+        print("Biggest :",d)
+elif(c>d):
+    print("Biggest: ",c)
+else:
+    print("Biggest :",d)    
+
+
+'''
+P14
+-------------------------------------------------------------------
+'''
+A = [2049,2050,2051,2052,2053,2054,2055,2056,2057,2058]
+B = ["Sam","Rahul","Abysys","Sinu","Saket","Prince","Tina","Kristlin","Prayag","Tanya"]
+
+#a
+for EmpName in B:
+    print(EmpName)
+
+print()
+#b
+index = int(input("Enter the index: "))
+print("{}-->{}".format(A[index],B[index]))
+
+print()
+#c
+for i in range(4,10):
+    print(B[i])
+
+print()
+#d
+for j in range(3,len(B)):
+    print(B[j])
+
+print()
+#e
+N = int(input("Enter N: "))
+print(A*N)
+print(B*N)
+
+print()
+#f
+print(A+B)
+
+print()
+#g
+for i in range(10):
+    print("{},{}".format(A[i],B[i]))
+
+'''
+P15
+-------------------------------------------------------------------
+'''
+Names = ["Prince","Tina","Kristlin","Prayag","Tanya"]
+name = input("Enter name to be searched: ")
+
+#a
+print(name in Names)
+
+#b
+for ele in Names:
+    if name==ele:
+        print(True)
+        
+#c
+print(Names[::-1])
+
+'''
+P16
+-------------------------------------------------------------------
+'''
+#i
+def primeChecker(number):
+    if number<=1:
+        return False
+    if number<=3:
+        return True
+    if number%2 == 0 or number%3 == 0:
+        return False
+    i = 5
+    while(i*i<=number):
+        if number%i == 0 or number%(i+2) == 0:
+            return False
+        i+=6
+    return True
+try:
+    number = int(input("Enter your desired number: "))
+    if (primeChecker(number) == True):
+        print("is Prime")
+    else:
+        print("is not Prime")
+except ValueError as e:
+    print("Not a valid number!")
+    
+
+#ii
+def primeGenerator(number):
+    for i in range(1,number):
+        if i<=1:
+            continue
+        if i<=3:
+            print(i)
+            continue
+        if i%2 == 0 or i%3 == 0:
+            continue
+        initial = 5
+        while(initial*initial<=i):
+            if i%initial == 0 or i%(initial+2) == 0:
+                continue
+            initial+=6
+        print(i)
+try:
+    RangeNumber = int(input("Enter your desired number: "))
+    print("{}{}".format("Prime Number between 1 and ",RangeNumber))
+    primeGenerator(RangeNumber)
+except ValueError as e:
+    print("Not a valid number!")
+
+'''
+P17
+-------------------------------------------------------------------
+'''
+def biggestAndSmallest():
+    try:
+        N = int(input("Enter the range of numbers you want to enter: "))
+        for i in range(N):
+            number = float(input("Enter your number: "))
+            yield number
+    except ValueError as e:
+        print("Invald number entered!")
+
+
+maximum = float('-inf')
+minimum = float('inf')
+for number in biggestAndSmallest():
+    if number>maximum:
+        maximum = number
+    if number<minimum:
+        minimum = number
+print("maximum: {},minimum: {}".format(maximum,minimum))
+
+'''
+P18
+-------------------------------------------------------------------
+'''
+#a
+for i in range(1,101):
+    print(i,end = " ")
+print()
+for i in range(100,0,-1):
+    print(i,end = " ")
+
+print()
+#b
+initial = 1
+final = 100
+while(initial<=final):
+    print(initial,end = " ")
+    initial+=1
+print()
+initial = 1
+final = 100
+while(final>=initial):
+    print(final,end = " ")
+    final-=1
+
+print()
+#c
+mystring = "Hello world"
+for i in mystring:
+    print(i)
+
+'''
+P19
+-------------------------------------------------------------------
+'''
+#a
+for i in range(1,101):
+    if i%2 == 0:
+        print(i,end = " ")
+
+print()
+for i in range(1,101):
+    if i%2 != 0:
+        continue
+    if i == 50:
+        break
+    elif(i == 10 or i == 20 or i == 30 or i == 40 or i == 50):
+        continue
+    else:
+        print(i,end = " ")
+
+#b
+print()
+start = 1
+end = 100
+while(start<=end):
+    if start%2 != 0:
+        start+=1
+        continue
+    if start == 90:
+        break
+    elif(start == 60 or start == 70 or start == 80 or start == 90):
+        start+=1
+        continue
+    else:
+        print(start,end = " ")
+        start+=1
+    
+
+'''
+P20
+-------------------------------------------------------------------
+'''
+#a
+try:
+    N = int(input("Enter the range: "))
+    if N>0:
+        first = 0
+        second = 1
+        if N == 1:
+            print(first)
+        else:
+            print("{}\n{}".format(first,second))
+            for i in range(N-2):
+                number = first+second
+                print(number)
+                first = second
+                second = number
+except ValueError as e:
+    print("Invalid integer!")
+
+
+#b
+MaxNumber = int(input("Enter Maximum Number: "))
+fibNumber = 0
+if fibNumber>=0:
+    first = 0
+    second = 1
+    if MaxNumber == 1:
+        print(first)
+    else:
+        print("{}\n{}".format(first,second))
+        while fibNumber<MaxNumber:
+            fibNumber = first+second
+            if fibNumber<MaxNumber:
+                print(fibNumber)
+            first = second
+            second = fibNumber          
